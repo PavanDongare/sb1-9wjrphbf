@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      shownModally="onShownModally"
+      class="bg-gray-100">
+    <GridLayout class="p-4">
+        <GridLayout rows="auto, *, auto" class="p-4 bg-white rounded-lg">
+            <Label row="0" text="{{ currentTask.name }}" class="text-2xl font-bold text-center mb-4"/>
+            <StackLayout row="1" class="text-center">
+                <Label text="{{ remainingTime }}" class="text-6xl font-bold text-center"/>
+                <Label text="minutes remaining" class="text-lg text-gray-500"/>
+            </StackLayout>
+            <GridLayout row="2" columns="*, *" class="mt-4">
+                <Button col="0" text="Abort" tap="{{ onAbort }}" class="m-2 p-4 rounded border border-red-500 text-red-500"/>
+                <Button col="1" text="Complete" tap="{{ onComplete }}" class="m-2 p-4 rounded bg-green-500 text-white"/>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>

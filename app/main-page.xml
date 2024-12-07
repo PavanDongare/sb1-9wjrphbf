@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="Work Logger" class="bg-blue-500 text-white"/>
+    
+    <GridLayout rows="auto, *, auto">
+        <!-- Total Time Display -->
+        <StackLayout row="0" class="p-4 bg-white border-b">
+            <Label text="Total Time Spent" class="text-lg text-gray-600"/>
+            <Label text="{{ totalTimeSpent }}" class="text-2xl font-bold"/>
+        </StackLayout>
+
+        <!-- Task List -->
+        <ListView row="1" items="{{ completedTasks }}" class="list-group">
+            <ListView.itemTemplate>
+                <StackLayout class="p-4 border-b">
+                    <Label text="{{ name }}" class="text-lg font-semibold"/>
+                    <Label text="{{ timeSpent }} minutes" class="text-gray-600"/>
+                    <Label text="{{ timestamp | dateFormat }}" class="text-sm text-gray-500"/>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Add Task Button -->
+        <Button row="2" text="+ New Task" tap="{{ showTaskForm }}" 
+                class="m-4 p-4 rounded-full bg-blue-500 text-white"/>
+    </GridLayout>
+</Page>
